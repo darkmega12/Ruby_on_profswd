@@ -1,0 +1,159 @@
+<html>
+	<head>
+		<title>Connect 4</title>
+		<style>
+			body{
+				background-color: #34495e;
+			}
+			#header{
+				text-align: center;
+				height: 100px;
+				width: 100%;
+				background-color: #e67e22;
+				position: relative;
+				border: 5px;
+				border-radius: 5px;
+			}
+			p{
+				font-style: Arial;
+				font-family: sans-serif;
+				font-size: 30px;
+				position: absolute;
+				top: 0px;
+				width: 100%;
+			}
+			#body{
+				height: 540px;
+				background-color: #2980b9;
+				width: 100%;
+				position: relative;
+				top: 20px;
+				border: 2px;
+				border-radius: 5px;
+			}
+			button{
+				position: relative;
+				height: 40px;
+				width: 100px;
+				left: 44%;
+				font-size: 20;
+				font-style: Arial;
+				font-family: sans-serif;
+				border: 2px;
+				border-radius: 5px;
+				top: 5px;
+			}
+			#gameSpace{
+				position: relative;
+				top: 2%;
+				left: 25%;
+				width: 50%;
+				height: 90%;
+				border: 10px;
+				border-color: yellow;
+				border-radius: 5px;
+				background-color: #1abc9c;
+			}
+			td{
+				text-align: center;
+				width: 40px;
+				height: 40px;
+				background-color: white;
+				border-width: 10px;
+				border-radius: 60px;
+				border-color: black;
+			}
+			
+		</style>
+		<script>
+			$(document).ready(function(){$("#gameSpace td").click(function() {
+				if(startGame == false)
+				{
+					alert("Press Start!");
+				}
+				else
+				{
+				    var column = $(this).index();
+				    var $tr = $(this).closest('tr');
+				    var row = $tr.index();
+				    console.log(row + " " + column);
+				    if(checkWritable(row, column) == true && startGame == true)
+				    {
+				    	if(player == 0)
+				    		$(this).css("background-color", "red");
+				    	else
+				    		$(this).css("background-color", "blue");
+				    	move(row, column);
+				    }
+				}
+				});
+			});
+
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<p>Connect4</p>
+		</div>
+		<div id="body">
+				<button id="startGame" onclick="start()">START!</button>
+				<button id="reset" onclick="reset()">RESET</button>
+				<table id="gameSpace" cellspacing="10" cellpadding="0">
+					<tr>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			        </tr>
+			        <tr>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>	
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			        </tr>
+			        <tr>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			        </tr>
+			        <tr>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			        </tr>
+			        <tr>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			        </tr>
+			        <tr>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			            <td> </td>
+			        </tr>
+				</table>
+		</div>
+	</body>
+</html>

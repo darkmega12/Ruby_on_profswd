@@ -1,0 +1,178 @@
+<html>
+	<head>
+		<title>Connect 4</title>
+		<style>
+			body{
+				background-color: #34495e;
+			}
+			#header{
+				text-align: center;
+				height: 100px;
+				width: 100%;
+				background-color: #e67e22;
+				position: relative;
+				border: 5px;
+				border-radius: 5px;
+			}
+			p{
+				font-style: Arial;
+				font-family: sans-serif;
+				font-size: 30px;
+				position: absolute;
+				top: 0px;
+				width: 100%;
+			}
+			#body{
+				height: 83%;
+				background-color: #2980b9;
+				width: 100%;
+				position: relative;
+				top: 20px;
+				border: 2px;
+				border-radius: 5px;
+			}
+			#menu{
+				position: relative;
+				float: left;
+				top: 2%;
+				left: 10px;
+				height: 96%;
+				width: 30%;
+				background-color: #0000FF;
+				border: 2px;
+				border-radius: 5px;
+			}
+			button{
+				position: relative;
+				height: 40px;
+				width: 100px;
+				top: 60%;
+				font-size: 20;
+				font-style: Arial;
+				font-family: sans-serif;
+				border: 2px;
+				border-radius: 5px;
+			}
+			#startGame{
+				left: 18%;
+			}
+			#reset{
+				left: 34%;
+			}
+			#gameplay{
+				position: relative;
+				float: right;
+				top: 2%;
+				right: 10px;
+				height: 96%;
+				width: 65%;
+				border: 2px;
+				border-radius: 5px;
+				background-color: #95a5a6;
+			}
+			#gameSpace{
+				position: relative;
+				top: 5%;
+				left: 15%;
+				width: 70%;
+				height: 90%;
+				border: 10px;
+				border-color: yellow;
+				border-radius: 5px;
+				background-color: #1abc9c;
+			}
+			td{
+				height: 60px;
+				width: 60px;
+				background-color: white;
+				border-width: 10px;
+				border-radius: 100%;
+			}
+			
+		</style>
+		<script src="jquery-2.1.1.js"></script>
+		<script src="game.js"></script>
+		<script>
+		function test(){
+			console.log("hello");
+		}
+		$("#gameSpace td").click(function(){
+			console.log("hello");
+		});
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<p>Connect 4</p>
+		</div>
+		<div id="body">
+			<div id="menu">
+				<p class="playerText"> Player 1: </p>
+				<p class="playerText"> Player 2: </p>
+				<p>Turn: </p>
+				<p id="turnNum"></p>
+				<button id="startGame" onclick="">START!</button>
+				<button id="reset" onclick="reset()">RESET</button>
+				<p id="turn"></p>
+			</div>
+			<div id="gameplay">
+					<table id="gameSpace" cellspacing="10">
+						<tr>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				        </tr>
+				        <tr>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				        </tr>
+				        <tr>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				        </tr>
+				        <tr>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				        </tr>
+				        <tr>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				        </tr>
+				        <tr>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				            <td></td>
+				        </tr>
+					</table>
+			</div>
+		</div>
+	</body>
+</html>
